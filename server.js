@@ -23,13 +23,19 @@ var output = {
 
 app.get('/api/json', function (req, res) {
     res.status(500).json(output);
-    });
+});
 
 app.get('/api/products/', db.getAllProducts);
 app.get('/api/products/:id', db.getProductByID);
 app.post('/api/products/', db.insertProduct);
 app.put('/api/products/:id', db.updateProduct);
 app.delete('/api/products/:id', db.deleteProduct);
+
+app.get('/api/users/', db.getAllUsers);
+app.get('/api/users/:id', db.getUserByID);
+app.post('/api/users/', db.insertUser);
+app.put('/api/users/:id', db.updateUser);
+app.delete('/api/users/:id', db.deleteUser);
 
 var port = process.env.PORT || 8080;
 app.listen(port, function () {
