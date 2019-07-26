@@ -25,29 +25,14 @@ app.get('/api/json', function (req, res) {
     res.status(500).json(output);
 });
 
-app.get('/api/products/', db.getAllProducts);
-app.get('/api/products/:id', db.getProductByID);
-app.post('/api/products/', db.insertProduct);
-app.put('/api/products/:id', db.updateProduct);
-app.delete('/api/products/:id', db.deleteProduct);
+app.get('/api/vitalsign/',  db.getVitalSigns);
+app.get('/api/vitalsign/:id', db.getVitalSignByID)
 
-app.get('/api/users/', db.getAllUsers);
-app.get('/api/users/:id', db.getUserByID);
-app.post('/api/users/', db.insertUser);
-app.put('/api/users/:id', db.updateUser);
-app.delete('/api/users/:id', db.deleteUser);
-
-app.get('/api/purchase_items/', db.getAllPurchaseItems);
-app.get('/api/purchase_items/:id', db.getPurchaseItemByID);
-app.post('/api/purchase_items/', db.insertPurchaseItem);
-app.put('/api/purchase_items/:id', db.updatePurchaseItem);
-app.delete('/api/purchase_items/:id', db.deletePurchaseItem);
-
-app.get('/api/purchases/', db.getAllPurchases);
-app.get('/api/purchases/:id', db.getPurchaseByID);
-app.post('/api/purchases/', db.insertPurchase);
-app.put('/api/purchases/:id', db.updatePurchase);
-app.delete('/api/purchases/:id', db.deletePurchase);
+// app.get('/api/products/', db.getAllProducts);
+// app.get('/api/products/:id', db.getProductByID);
+// app.post('/api/products/', db.insertProduct);
+// app.put('/api/products/:id', db.updateProduct);
+// app.delete('/api/products/:id', db.deleteProduct);
 
 var port = process.env.PORT || 8080;
 app.listen(port, function () {
